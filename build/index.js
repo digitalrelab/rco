@@ -72,12 +72,14 @@ var ClickOutside = function (_Component) {
     value: function componentDidMount() {
       document.addEventListener('touchend', this.handle, true);
       document.addEventListener('click', this.handle, true);
+      document.addEventListener('contextmenu', this.handle, true);
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       document.removeEventListener('touchend', this.handle, true);
       document.removeEventListener('click', this.handle, true);
+      document.addEventListener('contextmenu', this.handle, true);
     }
   }]);
 

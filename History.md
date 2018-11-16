@@ -1,3 +1,7 @@
+# v1.1.1
+
+- Fix build file
+
 # v1.1.0
 
 - Make ClickOutside hide when right-clicked outside
