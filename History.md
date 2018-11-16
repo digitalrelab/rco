@@ -1,11 +1,8 @@
-v1.1.1 / 2017-05-02
-===================
+# v1.1.0
 
-  * use `prop-types` module
+- Make ClickOutside hide when right-clicked outside
+- Add `.prettierrc`
 
+# v1.0.0
 
-v1.1.0 / 2016-02-24
-===================
-
-  * add PropTypes
-  * add example
+- Forked [tj/react-click-outside](https://github.com/tj/react-click-outside)

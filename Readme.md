@@ -1,26 +1,32 @@
+# RCO (React Click Outside)
 
-# ClickOutside
+![](https://img.shields.io/badge/license-MIT-blue.svg)
 
-React click outside component.
+_This is a fork of [tj/react-click-outside](https://github.com/tj/react-click-outside)._
+
+A Click Outside component for React.
 
 ## Installation
 
 ```
-$ npm install tj/react-click-outside
+$ yarn add @digitalrelab/rco
 ```
 
 ## Example
 
 ```js
-<ClickOutside onClickOutside={::this.close}>
-  <p>Im a menu or something that you want to hide when clicking outside.</p>
-</ClickOutside>
+import ClickOutside from '@digitalrelab/rco'
+
+const Popover = ({ closePopover }) => (
+  <ClickOutside onClickOutside={closePopover}>
+    <p>A popover that hides when you click outside.</p>
+  </ClickOutside>
+)
 ```
 
-## Badges
+## Why a fork?
 
-![](https://img.shields.io/badge/license-MIT-blue.svg)
-![](https://img.shields.io/badge/status-stable-green.svg)
+This compoent is great. Minimal API and gets the job done, but seems that TJ isn't maintaing it that much, so we decided to give it some support in order to make it fit our needs.
 
 ---
 
