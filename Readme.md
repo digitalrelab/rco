@@ -2,9 +2,7 @@
 
 ![](https://img.shields.io/badge/license-MIT-blue.svg)
 
-_This is a fork of [tj/react-click-outside](https://github.com/tj/react-click-outside)._
-
-A Click Outside component for React.
+A simple _Click Outside_ component for React with built-in TypeScript support.
 
 ## Installation
 
@@ -12,10 +10,10 @@ A Click Outside component for React.
 $ yarn add @digitalrelab/rco
 ```
 
-## Example
+## Basic usage
 
-```js
-import ClickOutside from '@digitalrelab/rco'
+```tsx
+import ClickOutside from "@digitalrelab/rco"
 
 const Popover = ({ closePopover }) => (
   <ClickOutside onClickOutside={closePopover}>
@@ -24,12 +22,22 @@ const Popover = ({ closePopover }) => (
 )
 ```
 
+## Exceptions
+
+Sometimes you have outside components that you don't want to trigger the `onClickOutside` callback, so the `exceptions` property is the way to go. Pretty simple to use:
+
+```tsx
+const Header = () => <header id="header" />
+
+const Popover = ({ closePopover }) => (
+  <ClickOutside onClickOutside={closePopover} exceptions={["#header"]}>
+    <div>A popover that hides when you click outside but the #header.</div>
+  </ClickOutside>
+)
+```
+
+Basically, `exceptions` expects a `string[]` where each element represents a DOM's query selector.
+
 ## Why a fork?
 
-This compoent is great. Minimal API and gets the job done, but seems that TJ isn't maintaing it that much, so we decided to give it some support in order to make it fit our needs.
-
----
-
-> [tjholowaychuk.com](http://tjholowaychuk.com) &nbsp;&middot;&nbsp;
-> GitHub [@tj](https://github.com/tj) &nbsp;&middot;&nbsp;
-> Twitter [@tjholowaychuk](https://twitter.com/tjholowaychuk)
+[TJ created a cool and simple ClickOutside component](https://github.com/tj/react-click-outside) a while ago, but the needs at [DigitalReLab](https://digitalrelab.com) demanded some updates that he didn't have time to support, so we forked his repo and extended the component's functionalities according to our needs, still giving the community the opportunity to benefit from our updates.
