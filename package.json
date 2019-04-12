@@ -1,6 +1,6 @@
 {
   "name": "@digitalrelab/rco",
-  "version": "v2.0.0",
+  "version": "2.0.1",
   "description": "ClickOutside component for React",
   "keywords": [
     "react",
