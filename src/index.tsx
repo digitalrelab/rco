@@ -46,7 +46,7 @@ const ClickOutside: React.FunctionComponent<IClickOutside> = ({
     return () => {
       document.removeEventListener("touchend", handleClickOutside, true)
       document.removeEventListener("click", handleClickOutside, true)
-      document.addEventListener("contextmenu", handleClickOutside, true)
+      document.removeEventListener("contextmenu", handleClickOutside, true)
     }
   }, [])
 
