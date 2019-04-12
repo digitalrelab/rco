@@ -13,9 +13,13 @@
   "license": "MIT",
   "scripts": {
     "build": "microbundle",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "release": "yarn build && ./release.sh"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^3.0.2",
+    "@semantic-release/git": "^7.0.8",
+    "@semantic-release/release-notes-generator": "^7.1.4",
     "@types/react": "^16.8.10",
     "@typescript-eslint/eslint-plugin": "^1.5.0",
     "@typescript-eslint/parser": "^1.5.0",
@@ -25,6 +29,7 @@
     "microbundle": "^0.11.0",
     "parcel-bundler": "^1.12.3",
     "prop-types": "^15.5.8",
+    "semantic-release": "^15.13.3",
     "typescript": "^3.3.4000"
   },
   "peerDependencies": {
@@ -34,5 +39,33 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "CHANGELOG.md"
+        }
+      ],
+      [
+        "@semantic-release/npm",
+        {
+          "tarballDir": "dist"
+        }
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "CHANGELOG.md",
+            "package.json",
+            "./dist/**/*.{js,ts}"
+          ]
+        }
+      ]
+    ]
   }
 }
