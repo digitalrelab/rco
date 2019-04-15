@@ -13,6 +13,7 @@ const ClickOutside: React.FunctionComponent<IClickOutside> = ({
     }
 
     if (
+      onClickOutside &&
       containerEl &&
       !containerEl.current.contains(event.target) &&
       !isExceptionElement(event.target as HTMLElement)
