@@ -5,7 +5,7 @@ const ClickOutside: React.FunctionComponent<IClickOutside> = ({
   children,
   exceptions,
 }) => {
-  const containerEl = React.useRef(null)
+  const containerEl: React.MutableRefObject<HTMLDivElement> = React.useRef(null)
 
   function handleClickOutside(event: MouseEvent) {
     if (event.type === "touchend") {
@@ -15,7 +15,8 @@ const ClickOutside: React.FunctionComponent<IClickOutside> = ({
     if (
       onClickOutside &&
       containerEl &&
-      !containerEl.current.contains(event.target) &&
+      containerEl.current &&
+      !containerEl.current.contains(event.target as Node) &&
       !isExceptionElement(event.target as HTMLElement)
     ) {
       onClickOutside(event)
