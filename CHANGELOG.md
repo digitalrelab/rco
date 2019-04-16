@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/digitalrelab/rco/compare/v2.0.3...v2.1.0) (2019-04-16)
+
+
+### Features
+
+* Make onClickOutside prop optional ([c2831ba](https://github.com/digitalrelab/rco/commit/c2831ba))
+
 ## [2.0.3](https://github.com/digitalrelab/rco/compare/v2.0.2...v2.0.3) (2019-04-15)
 
 
